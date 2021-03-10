@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=">
+  <title>[Bài tập] Ứng dụng vui DoYouLoveMe</title>
+</head>
+<body>
+  <h2>Do You Love Me?</h2>
+  <button onclick="love()">Yes</button>
+  <button id="no" style="position: absolute; left: 50px; width: 40px" onmouseover="move(this.id)">No</button>
+  
+  <script>
+    // Khi người dùng click chuột vào nút YES thì sẽ hiển thị thông báo: "<3"
+    function love() {
+      alert('<3');
+    }
+
+    // Khi người dùng di chuột lên nút NO thì nút NO sẽ nhảy sang một vị trí khác ngẫu nhiên trên màn hình. Kết quả là người dùng không thể click được chuột vào nút NO.
+    function move(id) {
+      const leftPx = Math.floor(Math.random() * window.innerWidth);
+      const topPx = Math.floor(Math.random() * window.innerHeight);
+
+      let no = document.getElementById(id);
+      no.style.left = leftPx + "px";
+      no.style.top = topPx + "px";
+    }
+  </script>
+</body>
+</html>
